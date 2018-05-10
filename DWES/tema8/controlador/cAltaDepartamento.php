@@ -1,0 +1,71 @@
+<?php
+/**
+ * File  cAltaDepartamento.php
+ * @author Pablo Cidón.
+ *
+ * Fichero que contiene el controlador de las altas.
+ * Fecha última revisión 16-04-2018
+ */
+$correcto = true;//Variable para comprobar los errores
+$mensajeError = array(//Array que contiene los mensajes de error.
+    'errorCodDepartamento' => '',
+    'errorDescDepartamento' => '',
+    'errorVolumen'=>'',
+    'errorCrearDepartamento' => '',
+    'errorExisteDepartamento' => ''
+);
+if (!isset($_SESSION['usuario'])) { //Comprobamos si no existe la sesion
+    header("Location: index.php"); //Si no existe nos manda registrarnos
+} else{
+    /**
+     * En el caso de que se haya pulsado el botón de cancelar, regresaremos a la página de mantenimiento, que es la de inicio.
+     */
+    if(isset($_POST['cancelar'])){
+        header('Location: index.php?numeroPagina=1&pagina=mantenimiento');
+    }
+    /**
+     * Si se ha pulsado aceptar, realizaremos la validación de los campos.
+     */
+    if(isset($_POST['aceptar'])) {
+        $mensajeError['errorCodDepartamento'] = validacionFormularios::comprobarAlfaNumerico($_POST['CodDepartamento'], 3, 3, 1);
+        $mensajeError['errorDescDepartamento'] = validacionFormularios::comprobarAlfabetico($_POST['DescDepartamento'], 100, 1, 1);
+        $mensajeError['errorVolumen'] = validacionFormularios::comprobarFloat($_POST['Volumen'], 1);
+        if (!empty(Departamento::validaCodNoExiste($_POST['CodDepartamento']))) {
+            $mensajeError['errorExisteDepartamento'] = "Este código ya existe";
+        }
+        foreach ($mensajeError as $valor) {  //recorremos el array de errores
+            if ($valor != null) {
+                $correcto = false;
+            }
+        }
+        /**
+         * En el caso de que se haya pulsado aceptar y
+         * todo sea correcto, cargaremos el contenido de los campos
+         * y ejecutaremos la consulta.
+         */
+        if (isset($_POST['aceptar']) && $correcto) {
+            $codDepartamento = $_POST['CodDepartamento'];
+            $descDepartamento = $_POST['DescDepartamento'];
+            $fechaCreacion = date("Y-m-d  H:i:s", $_SERVER['REQUEST_TIME']);
+            $volumen = $_POST['Volumen'];
+            $nuevoDepartamento = Departamento::altaDepartamento($codDepartamento, $descDepartamento, $fechaCreacion, $volumen);
+            /**
+             * Si el registro ha sido creado, nos iremos a la página de inicio.
+             * De lo contrario mostraremos un mensaje de error
+             */
+            if (!is_null($nuevoDepartamento)) {
+                header('Location: index.php?numeroPagina=1&pagina=mantenimiento');
+            } else {
+                $mensajeError['errorCrearDepartamento'] = "No se ha podido crear";
+            }
+        }
+    }
+    /**
+     * De todos los modos cargaremos la página de alta e incluiremos el layout.
+     */
+    $_GET["pagina"]="alta";
+    include_once "vista/layout.php";
+
+
+}
+?>

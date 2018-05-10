@@ -1,0 +1,64 @@
+<?php
+    //require_once "../view/cabeceraEjercicios.php";
+?>
+<script src="webroot/js/jquery.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(document).ready(function () {
+            $('#show-pass').mousedown(function () {
+                if ($('#password').attr('type') === 'text') {
+                    $('#password').attr('type', 'password');
+                } else {
+                    $('#password').attr('type', 'text');
+                }
+            });
+        });
+    });
+</script>
+<!--<div class="container">-->
+        <nav class="navbar "> 
+    <ul class="container-fluid"> 
+        <div class="navbar-header"> 
+            <a class="navbar-brand" href="#">LOGIN</a> 
+        </div> 
+
+        <ul class="nav navbar-nav navbar-right"> 
+            <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle"><span  class="glyphicon glyphicon-log-in"></span> Iniciar sesión<span class="caret"></span></a> 
+                <ul class="dropdown-menu" style="width: 375px;margin: auto;"> 
+                    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" class="form-horizontal" style="margin-left: 25%;"> 
+                    
+                    <div class="form-group input-group" > 
+
+                    <span class="input-group-addon"> 
+                        <span class="glyphicon glyphicon-user"></span> 
+                    </span> 
+
+                        <input type="text" class="form-control" name="codUsuario" placeholder="Nombre de usuario " style="width: 200px;"> 
+                    </div> 
+                    <div class="form-group input-group"> 
+                    <span class="input-group-addon"> 
+                        <span class="glyphicon glyphicon-lock"></span> 
+                    </span> 
+                        <input type="password" class="form-control" name="password" id="password" placeholder="Contraseña" style="width: 200px;"> 
+                        <button type="button" class="btn btn-primary" id="show-pass"><span class="glyphicon glyphicon-eye-open"></span></button>
+                    </div> 
+                    <div class="form-group"> 
+                        <?php echo "<span style='color:red;'>",$error,"</span>"; ?> 
+                        <input type="submit" class="btn btn-primary" name="enviar" value="Iniciar sesión"> 
+                    </div> 
+                    </form> 
+                </ul> 
+            </li> 
+
+            <li><a href="index.php?pagina=registrar"><span class="glyphicon glyphicon-user"></span> Registrarse</a></li> 
+        </ul> 
+
+    </div> 
+    </ul> 
+</nav> 
+<!--</div>-->
+<?php
+//require_once "../view/pie.php";
+?>
+
