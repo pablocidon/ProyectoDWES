@@ -1,0 +1,8 @@
+/* Your custom styles */
+.tecnologias{
+    background-color: #c4c4f2;
+
+}
+:disabled, input:read-only{
+    cursor: not-allowed;
+}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Usuarios>
+  <usuario>
+    <Codigo>UserA</Codigo>
+    <Password>paso</Password>
+    <Descripcion>Descripcion usuario A</Descripcion>
+    <Perfil>Usuario</Perfil>
+  </usuario>
+  <usuario>
+    <Codigo>UserB</Codigo>
+    <Password>paso</Password>
+    <Descripcion>Descripcion usuario B</Descripcion>
+    <Perfil>Usuario</Perfil>
+  </usuario>
+</Usuarios>
+

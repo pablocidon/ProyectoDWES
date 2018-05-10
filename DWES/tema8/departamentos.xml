@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Departamentos>
+  <Departamento>
+    <Codigo>ANI</Codigo>
+    <Descripcion>Departamento Ani</Descripcion>
+    <FechaAlta>2018-05-08 11:40:03</FechaAlta>
+    <VolumenDeNegocio>7</VolumenDeNegocio>
+    <FechaBaja/>
+  </Departamento>
+  <Departamento>
+    <Codigo>COD</Codigo>
+    <Descripcion>Departamento COD</Descripcion>
+    <FechaAlta>2018-05-08 11:38:46</FechaAlta>
+    <VolumenDeNegocio>8</VolumenDeNegocio>
+    <FechaBaja/>
+  </Departamento>
+  <Departamento>
+    <Codigo>DEP</Codigo>
+    <Descripcion>Descripcion Dep</Descripcion>
+    <FechaAlta>2018-05-08 11:38:18</FechaAlta>
+    <VolumenDeNegocio>7</VolumenDeNegocio>
+    <FechaBaja>2018-05-08 11:38:24</FechaBaja>
+  </Departamento>
+  <Departamento>
+    <Codigo>INF</Codigo>
+    <Descripcion>Departamento Informatica</Descripcion>
+    <FechaAlta>2018-05-08 11:37:44</FechaAlta>
+    <VolumenDeNegocio>5</VolumenDeNegocio>
+    <FechaBaja/>
+  </Departamento>
+  <Departamento>
+    <Codigo>ing</Codigo>
+    <Descripcion>departamento ingenieria</Descripcion>
+    <FechaAlta>2018-05-08 11:39:43</FechaAlta>
+    <VolumenDeNegocio>7</VolumenDeNegocio>
+    <FechaBaja/>
+  </Departamento>
+  <Departamento>
+    <Codigo>LUC</Codigo>
+    <Descripcion>Departamento Luci</Descripcion>
+    <FechaAlta>2018-05-08 11:40:42</FechaAlta>
+    <VolumenDeNegocio>1</VolumenDeNegocio>
+    <FechaBaja/>
+  </Departamento>
+  <Departamento>
+    <Codigo>MAT</Codigo>
+    <Descripcion>Departamento Matematicas</Descripcion>
+    <FechaAlta>2018-05-08 11:39:06</FechaAlta>
+    <VolumenDeNegocio>9</VolumenDeNegocio>
+    <FechaBaja/>
+  </Departamento>
+  <Departamento>
+    <Codigo>PLI</Codigo>
+    <Descripcion>Departamento PLI</Descripcion>
+    <FechaAlta>2018-05-08 11:39:27</FechaAlta>
+    <VolumenDeNegocio>4</VolumenDeNegocio>
+    <FechaBaja/>
+  </Departamento>
+  <Departamento>
+    <Codigo>UUU</Codigo>
+    <Descripcion>dep uprime</Descripcion>
+    <FechaAlta>2018-05-08 11:41:32</FechaAlta>
+    <VolumenDeNegocio>7</VolumenDeNegocio>
+    <FechaBaja/>
+  </Departamento>
+</Departamentos>
