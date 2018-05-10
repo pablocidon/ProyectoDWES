@@ -49,6 +49,7 @@
     </div>
 </nav>
 <div class="container">
+    <?php echo "PRUEBA LUCI";?>
     <div class="row col-md-12">
         <h1>Lenguajes y herramientas utilizadas</h1>
     </div>
