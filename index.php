@@ -117,5 +117,6 @@
     </div>
 </div>
 <?php
+echo "Mensaje de Pablo";
 require_once "view/pie.php";
 ?>
