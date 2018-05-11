@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Departamentos>
+  <Departamento>
+    <Codigo>CDA</Codigo>
+    <Descripcion>departamentoA</Descripcion>
+    <FechaAlta/>
+    <VolumenDeNegocio>150.25</VolumenDeNegocio>
+    <FechaBaja/>
+  </Departamento>
+  <Departamento>
+    <Codigo>CDC</Codigo>
+    <Descripcion>departamentoC</Descripcion>
+    <FechaAlta/>
+    <VolumenDeNegocio>100.2</VolumenDeNegocio>
+    <FechaBaja/>
+  </Departamento>
+  <Departamento>
+    <Codigo>GGG</Codigo>
+    <Descripcion>Departamento de lo que sea</Descripcion>
+    <FechaAlta>2018-05-02 12:17:05</FechaAlta>
+    <VolumenDeNegocio>14.02</VolumenDeNegocio>
+    <FechaBaja/>
+  </Departamento>
+  <Departamento>
+    <Codigo>INF</Codigo>
+    <Descripcion>Info</Descripcion>
+    <FechaAlta/>
+    <VolumenDeNegocio>333</VolumenDeNegocio>
+    <FechaBaja/>
+  </Departamento>
+  <Departamento>
+    <Codigo>LAP</Codigo>
+    <Descripcion>Departamento de todos</Descripcion>
+    <FechaAlta>2018-05-02 12:14:01</FechaAlta>
+    <VolumenDeNegocio>12544.2</VolumenDeNegocio>
+    <FechaBaja/>
+  </Departamento>
+  <Departamento>
+    <Codigo>LIT</Codigo>
+    <Descripcion>Literatura</Descripcion>
+    <FechaAlta/>
+    <VolumenDeNegocio/>
+    <FechaBaja/>
+  </Departamento>
+  <Departamento>
+    <Codigo>LOG</Codigo>
+    <Descripcion>Logistica</Descripcion>
+    <FechaAlta/>
+    <VolumenDeNegocio/>
+    <FechaBaja/>
+  </Departamento>
+  <Departamento>
+    <Codigo>LUC</Codigo>
+    <Descripcion>Departamento Luci</Descripcion>
+    <FechaAlta>2018-05-02 11:34:27</FechaAlta>
+    <VolumenDeNegocio>5</VolumenDeNegocio>
+    <FechaBaja/>
+  </Departamento>
+  <Departamento>
+    <Codigo>PAB</Codigo>
+    <Descripcion>Departamento de pablo</Descripcion>
+    <FechaAlta>2018-04-12 12:58:05</FechaAlta>
+    <VolumenDeNegocio>150</VolumenDeNegocio>
+    <FechaBaja/>
+  </Departamento>
+  <Departamento>
+    <Codigo>PPP</Codigo>
+    <Descripcion>DEPARTAMENTO DE PEPED</Descripcion>
+    <FechaAlta>2018-04-16 12:49:06</FechaAlta>
+    <VolumenDeNegocio>44</VolumenDeNegocio>
+    <FechaBaja>2018-04-19 08:50:32</FechaBaja>
+  </Departamento>
+  <Departamento>
+    <Codigo>PRB</Codigo>
+    <Descripcion>Departamento de prueba</Descripcion>
+    <FechaAlta>2018-04-12 12:50:54</FechaAlta>
+    <VolumenDeNegocio>120</VolumenDeNegocio>
+    <FechaBaja/>
+  </Departamento>
+  <Departamento>
+    <Codigo>SSS</Codigo>
+    <Descripcion>Departamento de sss</Descripcion>
+    <FechaAlta>2018-05-02 12:19:33</FechaAlta>
+    <VolumenDeNegocio>100.2</VolumenDeNegocio>
+    <FechaBaja/>
+  </Departamento>
+  <Departamento>
+    <Codigo>ttr</Codigo>
+    <Descripcion>aaa</Descripcion>
+    <FechaAlta>2018-05-02 11:08:18</FechaAlta>
+    <VolumenDeNegocio>2</VolumenDeNegocio>
+    <FechaBaja/>
+  </Departamento>
+  <Departamento>
+    <Codigo>ttt</Codigo>
+    <Descripcion>tontodddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</Descripcion>
+    <FechaAlta>2018-04-19 12:37:00</FechaAlta>
+    <VolumenDeNegocio>44</VolumenDeNegocio>
+    <FechaBaja/>
+  </Departamento>
+</Departamentos>
