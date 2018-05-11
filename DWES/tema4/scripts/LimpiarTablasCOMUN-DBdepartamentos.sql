@@ -1,0 +1,1 @@
+DELETE FROM `COMUN1_DBdepartamentos`.`Departamento`;

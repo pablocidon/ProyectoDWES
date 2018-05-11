@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Departamentos>
+  <Departamento>
+    <Codigo>BIO</Codigo>
+    <Descripcion>Biologia</Descripcion>
+  </Departamento>
+  <Departamento>
+    <Codigo>CDA</Codigo>
+    <Descripcion>departamentoA</Descripcion>
+  </Departamento>
+  <Departamento>
+    <Codigo>CDB</Codigo>
+    <Descripcion>departamentoB</Descripcion>
+  </Departamento>
+  <Departamento>
+    <Codigo>CDC</Codigo>
+    <Descripcion>departamentoC</Descripcion>
+  </Departamento>
+  <Departamento>
+    <Codigo>DIR</Codigo>
+    <Descripcion>Direccion</Descripcion>
+  </Departamento>
+  <Departamento>
+    <Codigo>INF</Codigo>
+    <Descripcion>Informatica</Descripcion>
+  </Departamento>
+  <Departamento>
+    <Codigo>LIT</Codigo>
+    <Descripcion>Literatura</Descripcion>
+  </Departamento>
+  <Departamento>
+    <Codigo>LOG</Codigo>
+    <Descripcion>Logistica</Descripcion>
+  </Departamento>
+  <Departamento>
+    <Codigo>MAT</Codigo>
+    <Descripcion>Matematicas</Descripcion>
+  </Departamento>
+</Departamentos>
