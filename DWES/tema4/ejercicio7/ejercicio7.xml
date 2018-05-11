@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<departamentos>
+  <departamento>
+    <CodDepartamento>ABC</CodDepartamento>
+    <DescDepartamento>abcdes</DescDepartamento>
+  </departamento>
+  <departamento>
+    <CodDepartamento>ABE</CodDepartamento>
+    <DescDepartamento>awert</DescDepartamento>
+  </departamento>
+  <departamento>
+    <CodDepartamento>DBR</CodDepartamento>
+    <DescDepartamento>awert</DescDepartamento>
+  </departamento>
+  <departamento>
+    <CodDepartamento>ABV</CodDepartamento>
+    <DescDepartamento>awert</DescDepartamento>
+  </departamento>
+    <departamento>
+    <CodDepartamento>DBP</CodDepartamento>
+    <DescDepartamento>awert</DescDepartamento>
+  </departamento>
+</departamentos>
+
