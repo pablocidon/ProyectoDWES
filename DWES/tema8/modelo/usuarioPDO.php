@@ -86,8 +86,8 @@ class UsuarioPDO{
     **/
     public static function editarPerfilUsuario($descripcion,$perfil,$codUsuario){
         $editado=false;
-        $consulta="update Usuarios set DescUsuario=?,Password=? where CodUsuario=?";
-        $resConsulta= DBPDO::ejecutaConsulta($consulta,[$descripcion,$password,$codUsuario]);
+        $consulta="update Usuarios set DescUsuario=?,Perfil=? where CodUsuario=?";
+        $resConsulta= DBPDO::ejecutaConsulta($consulta,[$descripcion,$perfil,$codUsuario]);
         if ($resConsulta->rowCount()==1){
             $editado=true;
         }
