@@ -29,6 +29,25 @@ class UsuarioPDO{
         }
         return $arrayUsuarios;         
     }
+    
+    public static function buscarUsuarioPorCodigo($codUsuario){
+        $consulta = "SELECT * FROM Usuarios WHERE CodUsuario = ?";
+        $arrayUsuarios = [];
+        $resultado = DBPDO::ejecutaConsulta($consulta,[$codUsuario]);
+        if($resultado->rowCount()==1){
+            $resultadoFetch = $resultado->fetchObject();
+            $arrayUsuarios['Codigo'] = $resultadoFetch->CodUsuario;        
+            $arrayUsuarios['Descripcion'] = $resultadoFetch->DescUsuario;     
+            $arrayUsuarios['Password'] = $resultadoFetch->Password;
+            $arrayUsuarios['perfil'] = $resultadoFetch->Perfil; 
+            $arrayUsuarios['NumeroAccesos'] = $resultadoFetch->NumeroAccesos;
+            $arrayUsuarios['UltimaConexion'] = $resultadoFetch->UltimaConexion;
+        }
+        return $arrayUsuarios;
+    }
+    
+    
+    
 
     /**
      * Funcion para el resgistro de usuario desde la base de datos
@@ -166,6 +185,16 @@ class UsuarioPDO{
             $totalUsuarios = $resultado->fetchColumn(0);
         }
         return $totalUsuarios;
+    }
+    
+    public static function bajaLogicaUsuario ($fechaBaja, $codUsuario){
+        $dadoBaja = false;
+        $consulta = "UPDATE Usuario SET FechaBajaUsuario = ? WHERE CodUsuario = ?";
+        $resconsulta = DBPDO::ejecutaConsulta($consulta,[$fechaBaja,$codUsuario]);
+        if($resconsulta->rowCount()==1){
+            $dadoBaja = true;
+        }
+        return $dadoBaja;
     }
 
 

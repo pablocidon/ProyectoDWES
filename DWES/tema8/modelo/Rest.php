@@ -34,5 +34,15 @@ class Rest{
         return curl_exec($resultados);
 
     }
+
+    public static function realizarOperacion($operador1,$operador2,$tipoOperacion){
+        $resultadoJSON = file_get_contents('http://daw-used.sauces.local/COMUN1/public_html/DWES/tema8/core/APIRest.php?operador1='.$operador1.'&operador2='.$operador2.'&tipoOperacion='.$tipoOperacion);
+        echo $resultadoJSON;
+        return json_decode($resultadoJSON);
+    }
+
+    public static function consultaRestVolumen($codigoDepartamento){
+
+    }
 }
 ?>
