@@ -36,8 +36,7 @@ class Rest{
     }
 
     public static function realizarOperacion($operador1,$operador2,$tipoOperacion){
-        $resultadoJSON = file_get_contents('http://daw-used.sauces.local/COMUN1/public_html/DWES/tema8/core/APIRest.php?operador1='.$operador1.'&operador2='.$operador2.'&tipoOperacion='.$tipoOperacion);
-        echo $resultadoJSON;
+        $resultadoJSON = file_get_contents('http://192.168.20.19/COMUN1/public_html/DWES/tema8/API/APIRestCalculadora.php?operador1='.$operador1.'&operador2='.$operador2.'&tipoOperacion='.$tipoOperacion);
         return json_decode($resultadoJSON);
     }
 
