@@ -41,6 +41,10 @@ class Usuario{
      * @var int $numVisitas     Ultima Numero visitas del usuario.
      */
     private $numVisitas;
+    /**
+     * @var timestamp   $fechaBajaUsuario  Fecha para las bajas lógicas de los Usuarios.
+     */
+    private $fechaBajaUsuario;
    
     //Definimos el constructor del objeto
     /**
@@ -79,6 +83,23 @@ class Usuario{
         return $usuario; 
     }
     
+    /**
+     * @function buscarDepartamentoPorCodigo($codDepartamento).
+     *
+     * Función para buscar un departamento por su código.
+     *
+     * @param string $codDepartamento Código del departamento a buscar.
+     *
+     * @return Departamento|null Dependiendo de si se ha encontrado ese registro en la base de datos.
+     */
+    public static function buscarUsuarioPorCodigo($codUsuario){
+        $usuario = null;
+        $arrayUsuario = UsuarioPDO::buscarUsuarioPorCodigo($codUsuario);
+        if(!empty($arrayUsuario)){
+            $usuario = new Usuario($arrayUsuario['Codigo'],$arrayUsuario['Descripcion'],$arrayUsuario['Password'],$arrayUsuario['perfil'],$arrayUsuario['UltimaConexion'],$arrayUsuario['NumeroAccesos'],$arrayUsuario['FechaBajaUsuario']);
+        }
+        return $usuario;
+    }
     
     /**
      * Funcion para el resgistro de usuario
@@ -134,13 +155,25 @@ class Usuario{
      **/
     public function editarPerfilUsuario($descripcion, $perfil, $codUsuario){ 
         $correcto=false; 
+        //$codUsuario=$this->getCodUsuario(); 
        
         if(UsuarioPDO::editarPerfilUsuario($descripcion,$perfil,$codUsuario)){ 
-          
+           // $this->setDescripcion($descripcion); 
+           // $this->setPerfil($perfil); 
             $correcto=true; 
         } 
         return $correcto; 
     }
+    
+    /**
+     * Funcion que actualiza el numero de accesos
+     * @author : Lucia Rodríguez Álvarez
+     * @param : string $codUsuario
+     * @return object Usuario
+     **/   
+   /* public static function actualizarAccesos($codUsuario){
+        return UsuarioPDO::actualizarAccesos($codUsuario);
+    }*/
     
     /**
      * Funcion que actualiza el numero de accesos y la fecha de ultima conexion
@@ -275,6 +308,15 @@ class Usuario{
         $this->Perfil = $perfil;
     }
     
+    public function getFechaBajaUsuario()
+    {
+        return $this->FechaBajaUsuario;
+    }
+    
+    public function setFechaBajaUsuario($fechaBajaUsuario){
+        $this->FechaBajaUsuario = $fechaBajaUsuario;
+    }
+   
     public static function contarUsuariosPorDescripcion ($descripcion){
         return UsuarioPDO::contarUsuariosPorDescripcion($descripcion);
     }
@@ -287,13 +329,15 @@ class Usuario{
         $usuario = UsuarioPDO::buscarUsuarioDescripcion($descripcion, $pagina, $registro);
         if(!empty($usuario)){
             for($i=0;$i<count($usuario);$i++){
-                $arrayUsuarios[$i] = new Usuario($usuario[$i]['Codigo'],$usuario[$i]['Descripcion'],$usuario[$i]['Password'],$usuario[$i]['Perfil'],$usuario[$i]['UltimaConexion'],$usuario[$i]['NumeroAccesos']);
+                $arrayUsuarios[$i] = new Usuario($usuario[$i]['Codigo'],$usuario[$i]['Descripcion'],$usuario[$i]['Password'],$usuario[$i]['Perfil'],$usuario[$i]['UltimaConexion'],$usuario[$i]['NumeroAccesos'],$usuario[$i]['FechaBajaUsuario']);
             }
         }
         return $arrayUsuarios;
     }
     
-
+    public function bajaLogicaUsuario ($fechaBaja, $codUsuario){
+        return UsuarioPDO::bajaLogicaUsuario($fechaBaja,$codUsuario);
+    }
 
 }
 ?>

@@ -27,8 +27,8 @@
             <div class="col-sm-10">
 <?php //preguntar aqui ?>
                 <select class="form-control" id="select" name="Perfil">
-                    <option value="Usuario" <?php if(isset($_POST['perfil']) && $_POST['perfil']=="Usuario"){ echo 'selected';}?>>Usuario</option> 
-                    <option value="Administrador" <?php if(isset($_POST['perfil']) && $_POST['perfil']=="Administrador"){ echo 'selected';}?>>Administrador</option> 
+                    <option value="Usuario" <?php if($usuario->getPerfil()=="Usuario"){ echo 'selected';}?>>Usuario</option> 
+                    <option value="Administrador" <?php if($usuario->getPerfil()=="Administrador"){ echo 'selected';}?>>Administrador</option> 
                 </select> 
             </div>
         </div>
@@ -37,7 +37,7 @@
             <div class="pull-right">
                 <div class="col-md-12">
                     <input type="submit" name="editar" class="btn btn-rounded btn-success" value="Aceptar"/>
-                    <input type="submit" name="cancelar" class="btn btn-rounded btn-danger" value="Cancelar"/>
+                    <input type="submit" name="volver" class="btn btn-rounded btn-danger" value="Cancelar"/>
                 </div>
             </div>
         </div>
@@ -45,6 +45,3 @@
 </form>
 
 
-<?php if(isset($_COOKIE['idioma']) && $_COOKIE['idioma']=="spain"){
-                        echo 'selected';
-                    }?>
