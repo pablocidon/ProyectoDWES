@@ -1,4 +1,11 @@
 <form action="index.php?pagina=rest" method="post" style="width: 100%;">
+    <div class="form-group">
+        <div class="pull-right">
+            <div class="col-md-12">
+                <input id="volver" type="submit" value="volver" class="btn btn-rounded btn-danger" name="volver"/>
+            </div>
+        </div>
+    </div>
     <h3>Servicio REST código de paises</h3>
     <div class="form-group row">
         <label for="isoCode" class="col-sm-4 col-form-label">Selecciona un código ISO para saber a que pais corresponde:</label>
@@ -17,7 +24,6 @@
         <div class="pull-right">
             <div class="col-md-12">
                 <input id="convertir" type="submit" value="Convertir" class="btn btn-rounded btn-success" name="convertir"/>
-                <input id="volver" type="submit" value="volver" class="btn btn-rounded btn-danger" name="volver"/>
             </div>
         </div>
     </div>
@@ -72,7 +78,7 @@
             <div class="alert alert-success alert-dismissable">
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
                 El resultado es
-                <strong><?php print_r($resultadoOperacion, true)->RestResponse->result->name;?></strong>
+                <strong><?php echo $_SESSION['resultadoOperacion']->Resultado[0]->Resultado;?></strong>
             </div>
         <?php } ?>
     </div>

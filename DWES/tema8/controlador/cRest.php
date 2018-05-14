@@ -10,7 +10,7 @@ if (isset($_POST["convertir"])){
     $_SESSION["respuestaRest2"] = Rest::consultaRestISO($_POST["isoCode"]);
 }
 if(isset($_POST['calcular'])){
-    $resultadoOperacion = Rest::realizarOperacion($_POST['operador1'],$_POST['operador2'],$_POST['tipoOperacion']);
+    $_SESSION['resultadoOperacion'] = Rest::realizarOperacion($_POST['operador1'],$_POST['operador2'],$_POST['tipoOperacion']);
 }
 if(isset($_POST['consultar'])){
     $mensajeError['errorCodDepartamento'] = validacionFormularios::comprobarAlfaNumerico($_POST['CodDepartamento'], 3, 3, 1);
