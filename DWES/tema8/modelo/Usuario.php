@@ -41,10 +41,6 @@ class Usuario{
      * @var int $numVisitas     Ultima Numero visitas del usuario.
      */
     private $numVisitas;
-    /**
-     * @var timestamp   $fechaBajaUsuario  Fecha para las bajas lógicas de los Usuarios.
-     */
-    private $fechaBajaUsuario;
    
     //Definimos el constructor del objeto
     /**
@@ -66,7 +62,6 @@ class Usuario{
         $this->Perfil = $perfil;
         $this->UltimaConexion=$ultimaConexion;
         $this->NumeroAccesos=$numVisitas;
-        $this->fechaBajaUsuario=$fechaBajaUsuario;
     }
     
     /**
@@ -84,23 +79,6 @@ class Usuario{
         return $usuario; 
     }
     
-    /**
-     * @function buscarDepartamentoPorCodigo($codDepartamento).
-     *
-     * Función para buscar un departamento por su código.
-     *
-     * @param string $codDepartamento Código del departamento a buscar.
-     *
-     * @return Departamento|null Dependiendo de si se ha encontrado ese registro en la base de datos.
-     */
-    public static function buscarUsuarioPorCodigo($codUsuario){
-        $usuario = null;
-        $arrayUsuario = UsuarioPDO::buscarUsuarioPorCodigo($codUsuario);
-        if(!empty($arrayUsuario)){
-            $usuario = new Usuario($arrayUsuario['Codigo'],$arrayUsuario['Descripcion'],$arrayUsuario['Password'],$arrayUsuario['perfil'],$arrayUsuario['NumeroAccesos'],$arrayUsuario['UltimaConexion']);
-        }
-        return $usuario;
-    }
     
     /**
      * Funcion para el resgistro de usuario
@@ -154,27 +132,15 @@ class Usuario{
      * @param : string $password, string $descripcion
      * @return boolean true en caso de que se edite y false en caso contrario
      **/
-    public function editarPerfilUsuario($descripcion, $perfil){ 
+    public function editarPerfilUsuario($descripcion, $perfil, $codUsuario){ 
         $correcto=false; 
-        $codUsuario=$this->getCodUsuario(); 
        
         if(UsuarioPDO::editarPerfilUsuario($descripcion,$perfil,$codUsuario)){ 
-            $this->setDescripcion($descripcion); 
-            $this->setPerfil($perfil); 
+          
             $correcto=true; 
         } 
         return $correcto; 
     }
-    
-    /**
-     * Funcion que actualiza el numero de accesos
-     * @author : Lucia Rodríguez Álvarez
-     * @param : string $codUsuario
-     * @return object Usuario
-     **/   
-   /* public static function actualizarAccesos($codUsuario){
-        return UsuarioPDO::actualizarAccesos($codUsuario);
-    }*/
     
     /**
      * Funcion que actualiza el numero de accesos y la fecha de ultima conexion
@@ -309,15 +275,6 @@ class Usuario{
         $this->Perfil = $perfil;
     }
     
-    public function getFechaBajaUsuario()
-    {
-        return $this->fechaBajaUsuario;
-    }
-    
-    public function setFechaBajaUsuario($fechaBajaUsuario){
-        $this->fechaBajaUsuario = $fechaBajaUsuario;
-    }
-    
     public static function contarUsuariosPorDescripcion ($descripcion){
         return UsuarioPDO::contarUsuariosPorDescripcion($descripcion);
     }
@@ -336,9 +293,7 @@ class Usuario{
         return $arrayUsuarios;
     }
     
-    public function bajaLogicaUsuario ($fechaBaja, $codUsuario){
-        return UsuarioPDO::bajaLogicaUsuario($fechaBaja,$codUsuario);
-    }
+
 
 }
 ?>

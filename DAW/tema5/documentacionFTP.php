@@ -14,6 +14,7 @@ require_once "view/cabecera.php";
                     <dd><a href="#configuracionProFTPD">Configuración</a></dd>
                     <dd><a href="#estadoProFTPD">Servicio</a></dd>
                     <dd><a href="#mtoProFTPD">Mantenimiento</a></dd>
+                    <dd><a href="#estructura">Estructura de directorios</a></dd>
                 </dl>
             </div>
             <div class="col-md-10">
@@ -116,7 +117,7 @@ require_once "view/cabecera.php";
                             <p>Ahora ya podremos crear los usuarios, para ello ejecutaremos el siguiente comando:</p>
 <pre>
   sudo ftpasswd --passwd --name uftp1 --file /etc/passwd.usuarios.empresa1.com --uid 114 --gid 33 --home /var/www/html/empresa1.com/publc_html/ --shell /bin/false
-  sudo ftpasswd --passwd --name uftp2 --file /etc/passwd.usuarios.empresa2.com --uid 114 --gid 33 --home /var/www/html/empresa2.com/publc_html/ --shell /bin/false
+  sudo ftpasswd --passwd --name uftp2 --file /etc/passwd.usuarios.empresa2.com --uid 114 --gid 33 --home /var/www/html/empresa2.com/public_html/ --shell /bin/false
 </pre>
                         <p>Donde:</p>
                             <ul>
@@ -132,7 +133,68 @@ require_once "view/cabecera.php";
     ls /etc | grep usuarios
 </pre>
                         </li>
+                        <li>
+                            <p>Consultamos el fichero /etc/shells, y en el caso de que no exista el shell de los usuarios, tendremos que crearlo.</p>
+<pre>
+    /bin/sh
+    /bin/dash
+    /bin/bash
+    /bin/rbash
+    /usr/bin/tmux
+    /usr/bin/screen
+</pre>
+                            <p>Dado que no existe, lo añadimos</p>
+<pre>
+    /bin/false
+</pre>
+                        </li>
+                        <li>
+                            <p>Añadimos el usuario ftp al grupo www-data, sin eliminar ninguno de los grupos anteriores.</p>
+<pre>
+     sudo usermod -a -G www-data ftp
+</pre>
+                            <p>Una vez hecho, lo comprobamos de la siguiente manera:</p>
+<pre>
+     cat /etc/group | grep ftp
+</pre>
+                        </li>
+                        <li>
+                            Ahora realizaremos la configuración del fichero /etc/proftp/virtuals.conf, donde configuraremos las zonas virtuales.
+<pre>
+    &lt;VirtualHost www.empresa1.com&gt;
+        ServerName "Servidor FTP de la empresa 1"
+        Port 2121
+        DefaultRoot ~
+        AuthUserFile /etc/passwd.usuarios.empresa1.com
+    &lt;/VirtualHost&gt;
+    &lt;VirtualHost www.empresa2.com&gt;
+        ServerName "Servidor FTP de la empresa 2"
+        Port 2122
+        DefaultRoot ~
+        AuthUserFile /etc/passwd.usuarios.empresa2.com
+    &lt;/VirtualHost&gt;
+</pre>
+                        </li>
+                        <li>
+                            <p>Por último, accedemos a nuestro cliente FTP para comprobar que funciona: </p>
+                            <img src="webroot/img/conexion1.png" class="img-responsive" alt="Conexión uftp1" style="margin-left: 8%">
+                            <img src="webroot/img/conexion2.png" class="img-responsive" alt="Conexión uftp2" style="margin-left: 8%">
+                        </li>
                     </ol>
+                </div>
+                <div id="estructura">
+                    <h3>Estructura de directorios</h3>
+                    <p>Para ver la estructura de directorios de nuestro sitio, podemos ejecutar el siguiente comando.</p>
+<pre>
+    tree -gup /var/www/html
+</pre>
+                    <p>Para ejecutar el comando es necesario instalar el programa.</p>
+<pre>
+    sudo apt-get install tree
+</pre>
+                    <p>El comando nos va a devolver algo como esto: </p>
+                    <img src="webroot/img/tree.png" class="img-responsive" alt="Directorios" style="margin-left: 20%">
+                    <br>
                 </div>
             </div>
         </div>

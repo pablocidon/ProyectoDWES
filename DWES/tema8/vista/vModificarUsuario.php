@@ -1,5 +1,5 @@
 <h3>Editar Usuario</h3>
-<form name="formularioAlta" class="" action="index.php?pagina=mantenimientoUsuarios&Usuario=<?php echo $_GET['CodUsuario'];?>&numeroPagina=<?php echo $_GET['numeroPagina'];?>" method="post" style="width: 100%;">
+<form name="formularioAlta" class="" action="index.php?pagina=modificarUsuario&Usuario=<?php echo $_GET['Usuario'];?>&numeroPagina=<?php echo $_GET['numeroPagina'];?>" method="post" style="width: 100%;">
     <fieldset>
         <br>
         <div class="form-group row">
@@ -26,9 +26,9 @@
             <label for="inputPassword3MD" class="col-sm-2 col-form-label">Perfil:</label>
             <div class="col-sm-10">
 <?php //preguntar aqui ?>
-                <select class="form-control" id="select" name="perfil">
-                    <option value="Usuario">Usuario</option> 
-                    <option value="Administrador">Administrador</option> 
+                <select class="form-control" id="select" name="Perfil">
+                    <option value="Usuario" <?php if(isset($_POST['perfil']) && $_POST['perfil']=="Usuario"){ echo 'selected';}?>>Usuario</option> 
+                    <option value="Administrador" <?php if(isset($_POST['perfil']) && $_POST['perfil']=="Administrador"){ echo 'selected';}?>>Administrador</option> 
                 </select> 
             </div>
         </div>
@@ -45,3 +45,6 @@
 </form>
 
 
+<?php if(isset($_COOKIE['idioma']) && $_COOKIE['idioma']=="spain"){
+                        echo 'selected';
+                    }?>

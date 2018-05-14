@@ -11,7 +11,7 @@ if (!isset($_SESSION['usuario'])) { //Comprobamos si no existe la sesion
     $entradaOk=true;
     $error="";
     $mensajeError="";
-    $usuario = Usuario::buscarUsuarioPorCodigo($_POST['CodUsuario']);
+    $usuario = Usuario::buscarUsuarioPorCodigo($_GET['Usuario']);
     /**
      * En el caso de pulsar el botón de cancelar nos iremos a la página de inicio.
      */
@@ -29,13 +29,15 @@ if (!isset($_SESSION['usuario'])) { //Comprobamos si no existe la sesion
             }
         }
     }
+    
+    
     /**
      * En el caso de haber pulsado el botón de editar y no haya errores, comprobaremos que se ejecuta la consulta y si lo hace nos iremos a la página de inicio,
      * y si no se cargará un mensaje de error y se volverá a cargar la misma página.
      */
     //Usuario::editarPerfilUsuario($_POST['DescUsuario',$_POST['Perfil']);
     if (isset($_POST['editar']) && $entradaOk) {
-        if (Usuario::editarPerfilUsuario($_POST['DescUsuario'],$_POST['Perfil'])){
+        if (Usuario::editarPerfilUsuario($_POST['DescUsuario'],$_POST['Perfil'],$_POST['CodUsuario'])){
             header('Location: index.php?numeroPagina='.$_GET['numeroPagina'].'&pagina=mantenimientoUsuarios');
         } else {
             $mensajeError['errorModificar'] = "Error al modificar el Usuario";

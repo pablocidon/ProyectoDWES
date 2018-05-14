@@ -24,12 +24,11 @@ $vistas=[
     "mantenimientoUsuarios"=>'vista/vMantenimientoUsuarios.php',
     "crearUsuario"=>"vista/vCrearUsuario.php",
     "modificarUsuario"=>"vista/vModificarUsuario.php",
-    "bajaLogicaUsuario"=>"vista/vBajaLogicaUsuario.php",
     "wip"=>'vista/vWIP.php',
     "soap"=>'vista/vSoap.php',
     "rest"=>'vista/vRest.php',
     "tecnologias"=>'vista/vTecnologias.php'
-//vBajaLogicaUsuario
+
 ];
 $controladores=[
     'mantenimiento'=>'controlador/cMtoDepartamentos.php',
@@ -48,8 +47,7 @@ $controladores=[
     "rehabilitar"=>'controlador/cRehabilitarDepartamento.php',
     "mantenimientoUsuarios"=>'controlador/cMantenimientoUsuarios.php',
     "crearUsuario"=>"controlador/cCrearUsuario.php",
-    "modificarUsuario"=>"vista/cModificarUsuario.php",
-    "bajaLogicaUsuario"=>"vista/cBajaLogicaUsuario.php",
+    "modificarUsuario"=>"controlador/cModificarUsuario.php",
     "wip"=>'controlador/cWIP.php',
     "soap"=>'controlador/cSoap.php',
     "rest"=>'controlador/cRest.php',
