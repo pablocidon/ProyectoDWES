@@ -65,6 +65,7 @@
                 <th class="text-center">Codigo</th>
                 <th>Descripcion</th>
                 <th>Perfil</th>
+                <th>Fecha de Baja</th>
                 <th class="text-center">Editar/Borrar</th>
             </tr>
             </thead>
@@ -79,8 +80,9 @@
                     echo "<td class='text-center'>". $usuarios[$i]->getCodUsuario() ."</td>";
                     echo "<td>". $usuarios[$i]->getDescripcion() ."</td>";
                     echo "<td>". $usuarios[$i]->getPerfil() ."</td>";
-                    echo '<td class="text-center"><a href="index.php?Usuario='.$usuarios[$i]->getCodUsuario().'&numeroPagina='.$_GET['numeroPagina'].'&pagina=wip" title="Editar Usuario"><i class="fa fa-pencil"></i> </a>/ 
-                        <a href="index.php?Usuario='.$usuarios[$i]->getCodUsuario().'&pagina=wip" title="Eliminar departamento"><i class="fa fa-trash"></i> </a>/
+                    echo "<td>". $usuarios[$i]->getFechaBajaUsuario() ."</td>";
+                    echo '<td class="text-center"><a href="index.php?Usuario='.$usuarios[$i]->getCodUsuario().'&numeroPagina='.$_GET['numeroPagina'].'&pagina=modificarUsuario" title="Editar Usuario"><i class="fa fa-pencil"></i> </a>/ 
+                        <a href="index.php?Usuario='.$usuarios[$i]->getCodUsuario().'&pagina=bajaLogicaUsuario" title="Eliminar departamento"><i class="fa fa-trash"></i> </a>/
                         </td>';//Creamos los enlaces a las ventanas de eliminar y editar, pasando como uno de los parámetro el código del departamento seleccionado
                     echo "</tr>";
                 

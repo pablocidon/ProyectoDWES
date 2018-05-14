@@ -29,7 +29,7 @@
 
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark indigo">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="index.php">
         <img src="webroot/img/logo.png" class="d-inline-block align-top animated bounce infinite">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav"
