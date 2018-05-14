@@ -127,14 +127,20 @@ class Usuario{
     }
     
     /**
-     * Funcion que actualiza el numero de accesos
+     * Funcion editar los datos de un usuario
      * @author : Lucia Rodríguez Álvarez
-     * @param : string $codUsuario
-     * @return object Usuario
-     **/   
-   /* public static function actualizarAccesos($codUsuario){
-        return UsuarioPDO::actualizarAccesos($codUsuario);
-    }*/
+     * @param : string $password, string $descripcion
+     * @return boolean true en caso de que se edite y false en caso contrario
+     **/
+    public function editarPerfilUsuario($descripcion, $perfil, $codUsuario){ 
+        $correcto=false; 
+       
+        if(UsuarioPDO::editarPerfilUsuario($descripcion,$perfil,$codUsuario)){ 
+          
+            $correcto=true; 
+        } 
+        return $correcto; 
+    }
     
     /**
      * Funcion que actualiza el numero de accesos y la fecha de ultima conexion
