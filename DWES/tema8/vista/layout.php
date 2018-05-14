@@ -63,7 +63,7 @@
                 }elseif(isset($_SESSION['usuario']) && $_SESSION['usuario']->getPerfil()=='Administrador'){
                     ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php if (isset($_GET['pagina']) && $_GET['pagina']!="inicio" && $_GET['pagina']!="login"){ echo "index.php?pagina=wip&paginaAnterior=".$_GET['pagina']; }else { echo " index.php?pagina=wip "; } ?>">Mantenimiento de Usuarios</a>
+                        <a class="nav-link" href="<?php if (isset($_GET['pagina']) && $_GET['pagina']!="inicio" && $_GET['pagina']!="login"){ echo "index.php?pagina=mantenimientoUsuarios&paginaAnterior=".$_GET['pagina']; }else { echo " index.php?pagina=mantenimientoUsuarios"; } ?>">Mantenimiento de Usuarios</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php if (isset($_GET['pagina']) && $_GET['pagina']!="inicio" && $_GET['pagina']!="login"){ echo "index.php?pagina=wip&paginaAnterior=".$_GET['pagina']; }else { echo " index.php?pagina=wip "; } ?>">Mantenimiento de cuestiones</a>
@@ -166,7 +166,7 @@
                     <a href="https://github.com/pablocidon/ProyectoDWES" class="github-ic" target="_blank" title="Ver en GitHub">
                         <i class="fa fa-github fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
                     </a>
-                    <a href="http://DAW-USGIT.sauces.local/LRA_1718/ProyectoDWES" class="gitlab-ic" target="_blank" title="Ver en GitLab">
+                    <a href="http://DAW-USGIT.sauces.local/LRA_1718/ProyectoDWES2" class="gitlab-ic" target="_blank" title="Ver en GitLab">
                         <i class="fa fa-gitlab fa-lg white-text fa-2x"> </i>
                     </a>
                 </div>
