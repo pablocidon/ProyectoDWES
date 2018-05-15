@@ -20,7 +20,7 @@ if (!isset($_SESSION['usuario'])) { //Comprobamos si no existe la sesion
     header("Location: index.php"); //Si no existe nos manda registrarnos
 } else {
     if (isset($_POST['cancelar'])) {
-        header('Location: index.php?numeroPagina='.$_GET['numeroPagina'].'&pagina=mantenimientoUsuarios');
+        header('Location: index.php?numeroPagina=1&pagina=mantenimientoUsuarios');
     }
     /**
      * En el caso de pulsar sí, comprobaremos que se ejecuta la consulta, y en el caso de que se ejecute la consulta
