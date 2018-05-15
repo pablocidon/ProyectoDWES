@@ -338,6 +338,10 @@ class Usuario{
     public function bajaLogicaUsuario ($fechaBaja, $codUsuario){
         return UsuarioPDO::bajaLogicaUsuario($fechaBaja,$codUsuario);
     }
+    
+     public function bajaUsuario ($codUsuario){
+        return UsuarioPDO::eliminarUsuario($codUsuario);
+    }
 
 }
 ?>
