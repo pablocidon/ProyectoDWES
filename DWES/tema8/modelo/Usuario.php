@@ -340,7 +340,7 @@ class Usuario{
     }
     
      public function bajaUsuario ($codUsuario){
-        return UsuarioPDO::eliminarUsuario($codUsuario);
+        return UsuarioPDO::bajaUsuario($codUsuario);
     }
     
     public function rehabilitarUsuario ($codUsuario){

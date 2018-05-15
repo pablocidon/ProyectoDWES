@@ -208,6 +208,16 @@ class UsuarioPDO{
         }
         return $rehabilitado;
     }
+    
+    public static function bajaUsuario ($codUsuario){
+        $eliminado = false;
+        $consulta = "delete from Usuarios where CodUsuario=?";
+        $resultado = DBPDO::ejecutaConsulta($consulta,[$codUsuario]);
+        if($resultado->rowCount()==1){
+            $eliminado = true;
+        }
+        return $eliminado;
+    }
 
 
 }
