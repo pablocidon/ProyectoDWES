@@ -34,7 +34,7 @@
         </div>
     </div>
     <?php if (isset($_POST["convertir"])) { ?>
-        <div class="alert alert-success alert-dismissable">
+        <div class="alert alert-success alert-dismissable col-sm-10">
             <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
             El país correspondiente al código ISO <strong><?php echo $_POST["isoCode"]; ?></strong> es
             <strong><?php echo($_SESSION["respuestaRest2"]->RestResponse->result->name); ?></strong>
@@ -75,7 +75,7 @@
     </div>
     <div class="form-group">
         <?php if (isset($_POST["calcular"])) { ?>
-            <div class="alert alert-success alert-dismissable">
+            <div class="alert alert-success alert-dismissable col-sm-10">
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
                 El resultado es
                 <strong><?php echo $_SESSION['resultadoOperacion']->Resultado[0]->Resultado;?></strong>
@@ -102,10 +102,17 @@
     </div>
 
     <?php if (isset($_POST["consultar"])) { ?>
-        <div class="alert alert-success alert-dismissable">
+        <div class="alert alert-success alert-dismissable col-sm-10">
             <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-            El volumen de negocio del departamento cuyo código es <strong><?php echo $_POST["CodDepartamento"]; ?></strong> es
-            <strong><?php echo $volumen; ?></strong>
+            <?php
+                if(is_null($_SESSION['departamento'])){
+                    echo "No existe el departamento";
+                }else{
+                    echo "El volumen de negocio del departamento cuyo código es <strong>".$_POST['CodDepartamento']."</strong> es
+            <strong>".$_SESSION['departamento']->getVolumenDeNegocio()."</strong>";
+                }
+            ?>
+
         </div>
     <?php } ?>
 </form>

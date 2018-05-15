@@ -41,7 +41,7 @@ class Rest{
     }
 
     public static function consultaRestVolumen($codigoDepartamento){
-
+        return Departamento::buscarDepartamentoPorCodigo($codigoDepartamento);
     }
 }
 ?>

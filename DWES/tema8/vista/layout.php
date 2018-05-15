@@ -29,7 +29,7 @@
 
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark indigo">
-    <a class="navbar-brand" href="index.php">
+    <a class="navbar-brand" href="#">
         <img src="webroot/img/logo.png" class="d-inline-block align-top animated bounce infinite">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav"
@@ -63,7 +63,7 @@
                 }elseif(isset($_SESSION['usuario']) && $_SESSION['usuario']->getPerfil()=='Administrador'){
                     ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php if (isset($_GET['pagina']) && $_GET['pagina']!="inicio" && $_GET['pagina']!="login"){ echo "index.php?pagina=mantenimientoUsuarios&paginaAnterior=".$_GET['pagina']; }else { echo " index.php?pagina=mantenimientoUsuarios"; } ?>">Mantenimiento de Usuarios</a>
+                        <a class="nav-link" href="<?php if (isset($_GET['pagina']) && $_GET['pagina']!="inicio" && $_GET['pagina']!="login"){ echo "index.php?pagina=wip&paginaAnterior=".$_GET['pagina']; }else { echo " index.php?pagina=mantenimientoUsuarios "; } ?>">Mantenimiento de Usuarios</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php if (isset($_GET['pagina']) && $_GET['pagina']!="inicio" && $_GET['pagina']!="login"){ echo "index.php?pagina=wip&paginaAnterior=".$_GET['pagina']; }else { echo " index.php?pagina=wip "; } ?>">Mantenimiento de cuestiones</a>

@@ -42,6 +42,7 @@ class UsuarioPDO{
             $arrayUsuarios['perfil'] = $resultadoFetch->Perfil; 
             $arrayUsuarios['NumeroAccesos'] = $resultadoFetch->NumeroAccesos;
             $arrayUsuarios['UltimaConexion'] = $resultadoFetch->UltimaConexion;
+            $arrayUsuarios['FechaBajaUsuario'] = $resultadoFetch->FechaBajaUsuario;
         }
         return $arrayUsuarios;
     }
@@ -170,6 +171,7 @@ class UsuarioPDO{
                 $arrayUsuario['Perfil'] = $resultadoFetch->Perfil;
                 $arrayUsuario['UltimaConexion'] = $resultadoFetch->UltimaConexion;
                 $arrayUsuario['NumeroAccesos'] = $resultadoFetch->NumeroAccesos;
+                $arrayUsuario['FechaBajaUsuario'] = $resultadoFetch->FechaBajaUsuario;
                 $usuario[$contador]=$arrayUsuario;
                 $contador++;
             }
@@ -189,7 +191,7 @@ class UsuarioPDO{
     
     public static function bajaLogicaUsuario ($fechaBaja, $codUsuario){
         $dadoBaja = false;
-        $consulta = "UPDATE Usuario SET FechaBajaUsuario = ? WHERE CodUsuario = ?";
+        $consulta = "UPDATE Usuarios SET FechaBajaUsuario = ? WHERE CodUsuario = ?";
         $resconsulta = DBPDO::ejecutaConsulta($consulta,[$fechaBaja,$codUsuario]);
         if($resconsulta->rowCount()==1){
             $dadoBaja = true;
