@@ -342,6 +342,10 @@ class Usuario{
      public function bajaUsuario ($codUsuario){
         return UsuarioPDO::eliminarUsuario($codUsuario);
     }
+    
+    public function rehabilitarUsuario ($codUsuario){
+        return UsuarioPDO::rehabilitarUsuario($codUsuario);
+    }
 
 }
 ?>

@@ -198,6 +198,16 @@ class UsuarioPDO{
         }
         return $dadoBaja;
     }
+    
+    public static function rehabilitarUsuario ($codUsuario){
+        $rehabilitado = false;
+        $consulta = "UPDATE Usuarios SET FechaBajaUsuario = NULL WHERE CodUsuario = ?";
+        $resconsulta = DBPDO::ejecutaConsulta($consulta,[$codUsuario]);
+        if($resconsulta->rowCount()==1){
+            $rehabilitado = true;
+        }
+        return $rehabilitado;
+    }
 
 
 }
