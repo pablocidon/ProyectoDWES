@@ -41,7 +41,6 @@ class Rest{
 
     public static function consultaRestVolumen($codigoDepartamento){
         $resultadoJSON = file_get_contents('http://192.168.20.19/COMUN1/public_html/DWES/tema8/API/APIRestDepartamentos.php?codDepartamento='.$codigoDepartamento);
-        echo $resultadoJSON;
         return json_decode($resultadoJSON);
     }
 }
