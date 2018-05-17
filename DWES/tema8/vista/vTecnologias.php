@@ -45,7 +45,7 @@
         </div>
         <div class="col-md-2 tecnologias">
             <figure>
-                <img src="webroot/img/webstorm.png" class="img-responsive" alt="">
+                <img src="webroot/img/netbeans.png" class="img-responsive" alt="">
             </figure>
         </div>
         <div class="col-md-2 tecnologias">

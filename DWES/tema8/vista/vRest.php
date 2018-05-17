@@ -105,12 +105,12 @@
         <div class="alert alert-success alert-dismissable col-sm-10">
             <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
             <?php
-                if(is_null($_SESSION['departamento'])){
-                    echo "No existe el departamento";
-                }else{
-                    echo "El volumen de negocio del departamento cuyo código es <strong>".$_POST['CodDepartamento']."</strong> es
-            <strong>".$_SESSION['departamento']->getVolumenDeNegocio()."</strong>";
-                }
+            if($_SESSION['departamento']->Error == 1 || !is_null($_SESSION['departamento']->FechaBaja)){
+                echo "No se han obtenido resultados";
+            }else{
+                echo "El volumen de negocio del departamento cuyo código es <strong>".$_POST['CodDepartamento']."</strong> es
+            <strong>".$_SESSION['departamento']->Volumen."</strong>";
+            }
             ?>
 
         </div>

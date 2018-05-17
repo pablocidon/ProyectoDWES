@@ -1,6 +1,6 @@
 <?php
 
-require_once "modelo/Rest.php";
+require_once "API/Rest.php";
 $volumen = "";
 $correcto = true;
 $mensajeError = array(//Array que contiene los mensajes de error.
@@ -22,11 +22,6 @@ if(isset($_POST['consultar'])){
     }
     if($correcto){
         $_SESSION['departamento'] = Rest::consultaRestVolumen($_POST['CodDepartamento']);
-        if(is_null($_SESSION['departamento'])){
-            $volumen = "No existe el departamento";
-        }else{
-            $volumen = $_SESSION['departamento'];
-        }
     }
 
 }
