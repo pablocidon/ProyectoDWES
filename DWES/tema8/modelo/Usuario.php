@@ -59,13 +59,14 @@ class Usuario{
      * @param timestamp $ultimaConexion
      * @param int $numVisitas
      */
-    function __construct($codUsuario, $descripcion, $password, $perfil,$ultimaConexion,$numVisitas) {
+    function __construct($codUsuario, $descripcion, $password, $perfil,$ultimaConexion,$numVisitas,$fechaBajaUsuario) {
         $this->CodUsuario = $codUsuario;
         $this->DescUsuario = $descripcion;
         $this->Password = $password;
         $this->Perfil = $perfil;
         $this->UltimaConexion=$ultimaConexion;
         $this->NumeroAccesos=$numVisitas;
+        $this->FechaBajaUsuario=$fechaBajaUsuario;
     }
     
     /**
@@ -78,7 +79,7 @@ class Usuario{
         $usuario=null;
         $arrayUsuario=UsuarioPDO::validarUsuario($codUsuario,$password); 
         if(!empty($arrayUsuario)) { 
-            $usuario = new Usuario($codUsuario, $arrayUsuario['descripcion'], $password, $arrayUsuario['perfil'], $arrayUsuario['ultimaConexion'],$arrayUsuario['numVisitas']); 
+            $usuario = new Usuario($codUsuario, $arrayUsuario['descripcion'], $password, $arrayUsuario['perfil'], $arrayUsuario['ultimaConexion'],$arrayUsuario['numVisitas'],$arrayUsuario['fechaBajaUsuario']); 
         } 
         return $usuario; 
     }

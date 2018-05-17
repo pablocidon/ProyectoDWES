@@ -25,7 +25,8 @@ class UsuarioPDO{
             $arrayUsuarios['perfil'] = $resFetch->Perfil; 
             $arrayUsuarios['descripcion'] = $resFetch->DescUsuario;
             $arrayUsuarios['ultimaConexion'] = $resFetch->UltimaConexion; 
-            $arrayUsuarios['numVisitas'] = $resFetch->NumeroAccesos; 
+            $arrayUsuarios['numVisitas'] = $resFetch->NumeroAccesos;
+            $arrayUsuarios['fechaBajaUsuario'] = $resFetch->FechaBajaUsuario;
         }
         return $arrayUsuarios;         
     }

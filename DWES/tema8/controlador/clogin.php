@@ -23,7 +23,7 @@ if(isset($_POST['enviar'])){ //si existe enviar enviamos el usuario y cotraseña
 	$codUsuario = $_POST['codUsuario'];
 	$password=$_POST['password'];
 	$usuario= Usuario::validarUsuario($codUsuario, $password); //comprobamos si el usuario y la contraseña son correctos
-        
+        $usuarioFecha= Usuario::buscarUsuarioPorCodigo($codUsuario);
 
 
     //$usuario= Usuario::actualizarAccesos($codUsuario);
@@ -31,6 +31,11 @@ if(isset($_POST['enviar'])){ //si existe enviar enviamos el usuario y cotraseña
             $error="usuario o contraseña incorrectos";
             $_GET['pagina']='login';
             require_once 'vista/layout.php';
+        }else if($usuarioFecha->getFechaBajaUsuario()!=NULL){
+            $error="usuario BANEADO";
+            $_GET['pagina']='login';
+            require_once 'vista/layout.php';
+          
         }else{
                 $_SESSION['usuario']=$usuario;//
                 $_SESSION['usuario']->UltimaConexionyAcceso();
