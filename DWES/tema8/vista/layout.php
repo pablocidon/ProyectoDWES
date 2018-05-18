@@ -39,7 +39,7 @@
     <div class="collapse navbar-collapse" id="basicExampleNav">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="<?php if (isset($_GET['pagina']) && $_GET['pagina']!="inicio" && $_GET['pagina']!="login"){ echo "index.php?pagina=wip&paginaAnterior=".$_GET['pagina']; }else { echo " index.php?pagina=wip "; } ?>">Estadísticas</a>
+                <a class="nav-link" href="<?php if (isset($_GET['pagina']) && $_GET['pagina']!="inicio" && $_GET['pagina']!="login"){ echo "index.php?pagina=estadisticas&paginaAnterior=".$_GET['pagina']; }else { echo " index.php?pagina=estadisticas "; } ?>">Estadísticas</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="webroot/img/180503CatalogoDeRequisitos.pdf" target="_blank">Catálogo de Requisitos</a>

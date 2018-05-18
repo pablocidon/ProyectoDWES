@@ -30,7 +30,8 @@ $vistas=[
     "wip"=>'vista/vWIP.php',
     "soap"=>'vista/vSoap.php',
     "rest"=>'vista/vRest.php',
-    "tecnologias"=>'vista/vTecnologias.php'
+    "tecnologias"=>'vista/vTecnologias.php',
+    "estadisticas"=>"vista/vEstadisticas.php"
 //vBajaLogicaUsuario
 ];
 $controladores=[
@@ -57,7 +58,8 @@ $controladores=[
     "wip"=>'controlador/cWIP.php',
     "soap"=>'controlador/cSoap.php',
     "rest"=>'controlador/cRest.php',
-    "tecnologias"=>'controlador/cTecnologias.php'
+    "tecnologias"=>'controlador/cTecnologias.php',
+    "estadisticas"=>"controlador/cEstadisticas.php"
 ];
 
 define("REGISTROSPAGINA",5);

@@ -9,10 +9,12 @@
 
 $entradaOk=true;
 $error="";
+$baja=false;
 
 if(isset($_POST['enviar'])){ //si existe enviar enviamos el usuario y cotraseña introducidos
         $mensajeError["errorUsuario"]= validacionFormularios::comprobarAlfabetico($_POST['codUsuario'], 10, 1, 1);// comprobamos el campo nombre
         $mensajeError["errorPassword"]= validacionFormularios::comprobarAlfaNumerico($_POST['password'], 255, 4, 1); //comprobamos el campo fecha
+        
         foreach ($mensajeError as &$valor){ //recorremos los mensajes de error
             if ($valor!=null){ //si el mensaje de error NO esta vacio
                 $entradaOk=false; // la variable de tratamiento de errores sera falsa y mostraremos los errores
@@ -36,7 +38,7 @@ if(isset($_POST['enviar'])){ //si existe enviar enviamos el usuario y cotraseña
             $_GET['pagina']='login';
             require_once 'vista/layout.php';
           
-        }else{
+        } else{
                 $_SESSION['usuario']=$usuario;//
                 $_SESSION['usuario']->UltimaConexionyAcceso();
                 header("Location: index.php?pagina=inicio");

@@ -26,7 +26,7 @@ class UsuarioPDO{
             $arrayUsuarios['descripcion'] = $resFetch->DescUsuario;
             $arrayUsuarios['ultimaConexion'] = $resFetch->UltimaConexion; 
             $arrayUsuarios['numVisitas'] = $resFetch->NumeroAccesos;
-            $arrayUsuarios['fechaBajaUsuario'] = $resFetch->FechaBajaUsuario;
+            $arrayUsuarios['fechaBajaUsuario'] = $resFetch->FechaBajaUsuario; 
         }
         return $arrayUsuarios;         
     }
@@ -82,6 +82,8 @@ class UsuarioPDO{
         }
         return $registrado;
     }
+    
+    
     
     /**
      * Funcion para editar el perfil del usuario
@@ -209,7 +211,7 @@ class UsuarioPDO{
         }
         return $rehabilitado;
     }
-    
+
     public static function bajaUsuario ($codUsuario){
         $eliminado = false;
         $consulta = "delete from Usuarios where CodUsuario=?";
@@ -219,7 +221,6 @@ class UsuarioPDO{
         }
         return $eliminado;
     }
-
 
 }
 

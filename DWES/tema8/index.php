@@ -12,6 +12,8 @@ require_once "config/config.php";
 require_once "modelo/Usuario.php";
 require_once "modelo/Departamento.php";
 require_once "core/validacionFormularios.php";
+require_once "modelo/Opinion.php";
+require_once "modelo/Cuestion.php";
 
 $controladorActual=$controladores["login"];//Establecemos el controlador que va a ser el del inicio de la aplicación.
 
@@ -35,6 +37,8 @@ if(!isset($_SESSION['usuario'])){//Comprobamos que está la sesión
          include_once $controladores['tecnologias'];//Cargamos la página de tecnologías, que no requiere de sesión
      }else if($_GET['pagina']=='wip'){
          include_once $controladores['wip'];//Cargamos la página de wip, que no requiere de sesión
+     }else if($_GET['pagina']=='estadisticas'){
+         include_once $controladores['estadisticas'];
      }
 }else{
     /**

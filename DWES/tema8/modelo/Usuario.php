@@ -128,6 +128,10 @@ class Usuario{
 
     }
     
+    
+    
+    
+    
     /**
      * Funcion editar los datos de un usuario
      * @author : Lucia Rodríguez Álvarez
@@ -196,7 +200,19 @@ class Usuario{
             $correcto=true; 
         } 
         return $correcto; 
-    } 
+    }
+    
+    /**
+     * @function bajaUsuario($codUsuario).
+     *
+     * Función para eliminar un departamento de nuestra base de datos.
+     *
+     * @param string $codUsuario Código del departamento a eliminar.
+     * @return bool Devuelve 0 si no se ha eliminado o 1 si se ha eliminado.
+     */
+    public function bajaUsuario ($codUsuario){
+        return UsuarioPDO::bajaUsuario($codUsuario);
+    }
 
     /**
      * Función para obtener la Descripcion del Usuario.
@@ -338,10 +354,6 @@ class Usuario{
     
     public function bajaLogicaUsuario ($fechaBaja, $codUsuario){
         return UsuarioPDO::bajaLogicaUsuario($fechaBaja,$codUsuario);
-    }
-    
-     public function bajaUsuario ($codUsuario){
-        return UsuarioPDO::bajaUsuario($codUsuario);
     }
     
     public function rehabilitarUsuario ($codUsuario){

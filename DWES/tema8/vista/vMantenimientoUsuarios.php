@@ -87,7 +87,7 @@
                         </td>';//Creamos los enlaces a las ventanas de eliminar y editar, pasando como uno de los parámetro el código del departamento seleccionado      
                     echo "</tr>";     
                 }else{
-                    echo "<tr class='table-info'>";
+                    echo "<tr class='table-danger'>";
                     echo "<td class='text-center'>". $usuarios[$i]->getCodUsuario() ."</td>";
                     echo "<td>". $usuarios[$i]->getDescripcion() ."</td>";
                     echo "<td>". $usuarios[$i]->getPerfil() ."</td>";

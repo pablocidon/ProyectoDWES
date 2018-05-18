@@ -1,5 +1,5 @@
 <?php
-require_once "modelo/Soap.php";
+require_once "API/Soap.php";
 if (isset($_POST["busqueda"])) {
     $_SESSION["respuestaSOAP"] = Soap::consultaSoapIP($_POST["ipSoap"]);
 }
